@@ -62,8 +62,25 @@ public void placeOrder(int tablenumber,List<MenuItem> items){
 
 
     }
-public void GenerateBill(){
+public void GenerateBill(int tableNo){
+    for(Order order: orders ){
 
+        if(order.getTablenumber() == tableNo){
+            System.out.println("Bill for " + tableNo + "total " + order.getTotalamount());
+            markTableasAvailable(tableNo);
+            return;
+        }
+    }
+    System.out.println("No orders id found for the table " + tableNo);
+}
+public void markTableasAvailable(int tableNo){
+        for(Table table : tables){
+        if(table.getTableNo() == tableNo){
+
+        table.setOccupied(false);
+        break;
+        }
+        }
 
 }
 }
