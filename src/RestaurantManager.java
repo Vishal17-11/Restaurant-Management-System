@@ -1,4 +1,5 @@
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantManager {
@@ -6,6 +7,11 @@ public class RestaurantManager {
     List<MenuItem> menu;
     List<Order> orders;
     List<Table> tables;
+
+    public RestaurantManager() {
+
+        menu = new ArrayList<>();
+    }
 
     public RestaurantManager(List<MenuItem> menu, List<Order> orders, List<Table> tables) {
         this.menu = menu;
@@ -83,4 +89,8 @@ public void markTableasAvailable(int tableNo){
         }
 
 }
+
+
+
+
 }
